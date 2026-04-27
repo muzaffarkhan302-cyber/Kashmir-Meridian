@@ -3,7 +3,7 @@ WORKDIR /app
 
 FROM base AS deps
 COPY package.json package-lock.json ./
-RUN --mount=type=cache,target=/root/.npm,id=npm-cache \
+RUN --mount=type=cache,id=s/d347441f-2906-4ea5-9c89-df35ea70f8d9-/root/.npm,target=/root/.npm \
     npm ci --prefer-offline --no-audit
 
 FROM deps AS build
